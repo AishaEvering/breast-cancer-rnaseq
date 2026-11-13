@@ -1,0 +1,21 @@
+name: breast-cancer-rnaseq
+channels:
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - bioconductor-apeglm
+  - bioconductor-clusterprofiler
+  - bioconductor-deseq2
+  - bioconductor-org.hs.eg.db
+  - jupyterlab
+  - matplotlib
+  - pandas
+  - python=3.11
+  - r-base=4.4
+  - r-ggrepel
+  - r-irkernel
+  - r-pheatmap
+  - r-quarto
+  - r-tidyverse
+prefix: /opt/anaconda3/envs/breast-cancer-rnaseq

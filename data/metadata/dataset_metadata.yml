@@ -1,0 +1,65 @@
+# Dataset Metadata
+# Source: NCBI Gene Expression Omnibus (GEO)
+
+dataset:
+  accession: GSE103001
+  title: "Stranded RNASeq of human mammary primary tumors ER+ and paired adjacent healthy tissues"
+  repository: "NCBI Gene Expression Omnibus"
+  url: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103001"
+  submission_date: "2017-08-23"
+  public_date: "2017-11-30"
+  last_updated: "2021-07-25"
+
+publication:
+  title: "Transcriptome-wide analysis of natural antisense transcripts shows their potential role in breast cancer"
+  authors: "Wenric S, El Guendi S, Caberg JH, et al."
+  journal: "Scientific Reports"
+  year: 2017
+  pmid: "29234122"
+  doi: "10.1038/s41598-017-17811-2"
+
+organism:
+  scientific_name: "Homo sapiens"
+  taxon_id: 9606
+
+experimental_design:
+  disease: "Estrogen receptor-positive breast cancer"
+  tumor_type: "Primary invasive breast carcinoma"
+  study_type: "Paired tumor-normal"
+  patients_reported: 22
+  samples_reported: 44
+  tumor_samples_reported: 22
+  normal_samples_reported: 22
+  normal_tissue: "Adjacent mammary healthy tissue"
+
+sequencing:
+  assay: "RNA-seq"
+  library_type: "Strand-specific"
+  platform: "Illumina HiSeq 2000"
+  geo_platform: "GPL11154"
+
+reference:
+  genome: "hg19 / GRCh37"
+  annotation: "Ensembl GRCh37 release 75"
+
+original_processing:
+  quality_control: "FastQC 0.11.2"
+  alignment: "STAR 2.4.1c"
+  alignment_qc: "Picard RNASeqMetrics 1.1"
+  gene_quantification: "HTSeq 0.6.1"
+  count_type: "Raw gene counts"
+
+data_access:
+  bioproject: "PRJNA399721"
+  sra_study: "SRP116023"
+  supplementary_archive: "GSE103001_RAW.tar"
+  supplementary_format: "Gzipped tab-delimited text files"
+  raw_reads_available: true
+  gene_counts_available: true
+
+validation:
+  sample_pairing: "Pending local validation"
+  count_file_integrity: "Pending download"
+  original_sample_exclusions: "One patient reportedly excluded for aberrant strand specificity; identity and applicability require verification"
+  analysis_sample_count: "To be determined"
+  download_date: null
