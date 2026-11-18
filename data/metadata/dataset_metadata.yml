@@ -1,3 +1,4 @@
+```yaml
 # Dataset Metadata
 # Source: NCBI Gene Expression Omnibus (GEO)
 
@@ -58,8 +59,40 @@ data_access:
   gene_counts_available: true
 
 validation:
-  sample_pairing: "Pending local validation"
-  count_file_integrity: "Pending download"
+  validation_date: "2026-11-18"
+  status: "Structural sample validation completed"
+
+  sample_pairing:
+    patients_with_both_conditions: 22
+    normal_samples: 22
+    tumor_samples: 22
+    status: "All 22 patients have both conditions represented in metadata"
+
+  count_file_integrity:
+    archive_downloaded: true
+    count_files_found: 44
+    metadata_samples_found: 44
+    duplicate_count_accessions: 0
+    duplicate_metadata_accessions: 0
+    missing_from_metadata: 0
+    missing_from_count_files: 0
+    sample_identifier_mismatches: 0
+    condition_mismatches: 0
+    status: "Filename and metadata consistency checks passed"
+
+  tumor_characteristics:
+    receptor_status: "ER+/HER2-"
+    receptor_status_confirmed_samples: 22
+    er_subtype_a: 12
+    er_subtype_b: 10
+
   original_sample_exclusions: "One patient reportedly excluded for aberrant strand specificity; identity and applicability require verification"
-  analysis_sample_count: "To be determined"
-  download_date: null
+
+  analysis_sample_count: 44
+  analysis_sample_count_status: "Provisional; subject to count-level QC and exclusion review"
+
+  biological_identity_verified: false
+  count_contents_inspected: false
+  count_matrix_constructed: false
+  download_date: 11/12/2026
+```

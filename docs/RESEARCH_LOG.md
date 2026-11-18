@@ -113,3 +113,59 @@ Remaining work:
 - Generate the download manifest.
 
 Status: Metadata inspection complete; pilot selection pending.
+
+## 2026-11-18 — Sample Metadata and Count File Validation
+
+### Objective
+
+Validate the consistency of sample identifiers and experimental conditions between the GSE103001 GEO metadata and downloaded HTSeq count files before constructing the gene count matrix.
+
+### Methods
+
+- Inspected the contents of `GSE103001_RAW.tar` and identified 44 gzipped HTSeq gene count files.
+- Extracted GEO accession numbers from count filenames and compared them with the GEO series metadata.
+- Checked for duplicate and missing GEO accessions.
+- Normalized sample identifiers by removing the `BCTN` and `BCTP` filename prefixes and compared them with sample identifiers extracted from metadata titles.
+- Compared tissue conditions inferred from filename prefixes (`BCTN` = normal; `BCTP` = tumor) with conditions recorded in metadata titles.
+- Reviewed patient pairing and tumor receptor annotations.
+
+### Results
+
+| Validation check              | Result       |
+| ----------------------------- | ------------ |
+| Count files                   | 44           |
+| Metadata samples              | 44           |
+| Duplicate count accessions    | 0            |
+| Duplicate metadata accessions | 0            |
+| Missing accessions            | 0            |
+| Sample identifier mismatches  | 0            |
+| Condition mismatches          | 0            |
+| Normal samples                | 22           |
+| Tumor samples                 | 22           |
+| Patients with both conditions | 22           |
+| Tumor receptor status         | 22 ER+/HER2− |
+| ER subtype A                  | 12           |
+| ER subtype B                  | 10           |
+
+### Interpretation
+
+All 44 count filenames were successfully matched to GEO metadata records by accession number, sample identifier, and experimental condition.
+
+The metadata identifies 22 patients with both normal and tumor samples, supporting the planned paired differential expression analysis.
+
+These checks establish structural consistency between filenames and metadata but do not independently verify biological sample identity or count-file contents.
+
+### Limitations
+
+- Individual count-file contents have not yet been inspected.
+- Sample identity has not been independently verified using genetic information.
+- A previously reported sample exclusion related to aberrant strand specificity requires further investigation.
+- The final number of samples included in differential expression analysis remains provisional.
+
+### Next Steps
+
+1. Inspect the contents of one compressed HTSeq count file.
+2. Examine gene identifiers, count values, and HTSeq summary rows.
+3. Confirm consistent gene identifiers across count files.
+4. Construct the gene count matrix.
+5. Perform count-level quality control before DESeq2 analysis.
